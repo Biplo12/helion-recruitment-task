@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import dataBooks from "../products.json";
 const App = () => {
-  const [tableData, setTableData] = useState([]);
-  useEffect(() => {
-    fetch("http://127.0.0.1/helion/index.php")
-      .then((data) => data.json())
-      .then((data) => setTableData(data.lista.ksiazka));
-  }, []);
-  console.log(tableData);
-
   const columns = [
-    { field: "ident", headerName: "Ident" },
+    { field: "ident", headerName: "Ident", width: 100 },
     { field: "tytul", headerName: "Tytuł", width: 300 },
-    { field: "liczbastron", headerName: "Liczba stron", width: 600 },
-    { field: "datawydania", headerName: "Data wydania", width: 600 },
+    { field: "liczbastron", headerName: "Liczba stron", width: 100 },
+    { field: "datawydania", headerName: "Data wydania", width: 100 },
   ];
 
   return (
-    <div style={{ height: 700, width: "100%" }}>
+    <div style={{ height: 800 }}>
       <DataGrid
-        rows={tableData}
+        rows={dataBooks.ksiazka}
         columns={columns}
-        pageSize={12}
-        getRowId={(tableData) => tableData.ident}
+        pageSize={13}
+        rowsPerPageOptions={[13]}
+        getRowId={(dataBooks) => dataBooks.ident}
       />
     </div>
   );

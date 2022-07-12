@@ -1,27 +1,20 @@
 <?php 
 header('Content-type: text/plain; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
-header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-header('Access-Control-Allow-Headers: Content-Type');
-//fetching data from URL
+//variables
 $URL = "https://dlabystrzakow.pl/xml/produkty-dlabystrzakow.xml";
-$local_file = "./produkty-dlabystrzakow.xml";
-$xml = simplexml_load_file($URL);
+$local_file = "./products.xml";
 
+//fetching data from URL
 $fileContents= file_get_contents($URL);
-$simpleXml = simplexml_load_string($fileContents);
-$json = json_encode($simpleXml);
-echo ($json);
-
-// fetching data from local file if fetching firn URL failed
-if(!$xml){
-    //fetching data from local file //Error handling if loading form URL and local file failed
-    $xml = simplexml_load_file($local_file) or die ("Cannot load data from URL and cannot find local file");
-    echo "Loading data from url failed. Data loaded from local file<br/>";
-    
-}
-
-
+//converting form xml to string
+$lista = new SimpleXMLElement($fileContents);
+foreach ($lista->lista->ksiazka as $book) {
+    //storing nessesary variables in array
+    $data = array("ident" => $book->ident, "tytul" => $book->tytul[0], "pages" => $book->liczbastron, "date" => $book->datawydania);
+    //converting array to JSON file
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    //displaying JSON
+    echo $json;
+ }
 ?>
-

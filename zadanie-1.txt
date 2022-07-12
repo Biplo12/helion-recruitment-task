@@ -1,0 +1,14 @@
+<div id=”idik1” class=”klasa1 klasa2”>lorem</div>
+
+<input name=”pole1”></input>
+Jeśli dokument obsługuje XHTML, należy zamykać tagi w taki sposób: <input/>. Zapis jest o wiele bardziej czytelny.
+
+<div id=”idik1” class=”klasa3”>ipsum</div>
+Atrybut Id musi być unikalny, ponieważ jest on używany do wybrania tylko jednej wartości.
+
+<div id=”idik2” class=”klasa4” class=”klasa5”>dolor amet</div>
+Nie należy używać takiego samego atrybutu 2 razy ponieważ HTML odczyta pierwszą wartość i przypisze ją bez zwracania uwagi na kolejny taki sam atrybut.
+
+<p>tekst</br>akapitu<p>zagnieżdzony P</p></p>
+Nie należy używać <br> ponieważ nie jest to semantyczne. 2 różne wizualne bloki powinny mieć swoje odpowiedniki w blokach logicznych. W pewnych przypadkach <br> jest poprawne semantycznie na przykład podczas gdy line break jest częścią danych które się wysyła.
+Paragraf nie powinien być osadzony w paragrafie. Zamiast takiego zapisu można użyć spana.

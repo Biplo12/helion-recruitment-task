@@ -1,0 +1,25 @@
+{
+  "ksiazka": [
+    {
+      "ident": "AKCIAZ",
+      "tytul": ["Aktywna ci\u0105\u017ca dla bystrzak\u00f3w"],
+
+      "liczbastron": "384",
+      "datawydania": "2008-05-14"
+    },
+    {
+      "ident": "AKGIBY",
+      "tytul": ["Akordy gitarowe dla bystrzak\u00f3w"],
+
+      "liczbastron": "376",
+      "datawydania": "2016-09-19"
+    },
+    {
+      "ident": "AKWABY",
+      "tytul": ["Akwarium s\u0142odkowodne dla bystrzak\u00f3w"],
+
+      "liczbastron": "320",
+      "datawydania": "2010-08-06"
+    }
+  ]
+}
